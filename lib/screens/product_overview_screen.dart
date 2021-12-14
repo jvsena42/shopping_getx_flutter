@@ -18,16 +18,15 @@ class ProductOverviewPage extends StatelessWidget {
           GetBuilder<CartController>(
               init: CartController(),
               builder: (contex) {
-                return Badge(
+                return GestureDetector(
                   child: IconButton(
-                      icon: Icon(
-                        Icons.shopping_cart,
-                      ),
-                      onPressed: () {
-                        Get.to(() => CartScreen());
-                      }),
-                  value: cartController.itemCount.toString(),
-                  color: Theme.of(context).accentColor,
+                    icon: Icon(
+                      Icons.shopping_cart,
+                    ),
+                    onPressed: () {
+                      Get.to(() => CartScreen());
+                    },
+                  ),
                 );
               })
         ],
