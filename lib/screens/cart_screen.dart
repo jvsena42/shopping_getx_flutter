@@ -5,7 +5,6 @@ import 'package:shopping_getx_flutter/controller/order_controller.dart';
 import 'package:shopping_getx_flutter/widget/cart_items.dart';
 
 class CartScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     var cartController = Get.put(CartController());
@@ -52,11 +51,9 @@ class CartScreen extends StatelessWidget {
                                     cartController.totalAmount);
                                 cartController.clear();
                                 Get.snackbar(
-                                    "Orders",
-                                    "Orders placed successfully",
+                                    "Orders", "Orders placed successfully",
                                     backgroundColor: Colors.green,
-                                    snackPosition: SnackPosition.BOTTOM
-                                );
+                                    snackPosition: SnackPosition.BOTTOM);
                               },
                               child: Text('ORDER NOW'));
                         })
@@ -69,14 +66,14 @@ class CartScreen extends StatelessWidget {
             ),
             Expanded(
               child: ListView.builder(
-                  itemCount: cartController.items.length,
-                  itemBuilder: (context, index) => CartItem(
-                    cartController.items.values.toList()[index].id,
-                    cartController.items.values.toList()[index].productPrice,
-                    cartController.items.values.toList()[index].productQuantity,
-                    cartController.items.values.toList()[index].productTitle,
-                    cartController.items.keys.toList()[index],
-                  ),
+                itemCount: cartController.items.length,
+                itemBuilder: (context, index) => CartItem(
+                  cartController.items.values.toList()[index].id,
+                  cartController.items.values.toList()[index].productPrice,
+                  cartController.items.values.toList()[index].productQuantity,
+                  cartController.items.values.toList()[index].productTitle,
+                  cartController.items.keys.toList()[index],
+                ),
               ),
             ),
           ],
