@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shopping_getx_flutter/controller/cart_controller.dart';
 import 'package:shopping_getx_flutter/controller/product_controller.dart';
+import 'package:shopping_getx_flutter/screens/product_details_screen.dart';
 
 class ProductsGrid extends StatelessWidget {
   final controller = Get.put(ProductController());
