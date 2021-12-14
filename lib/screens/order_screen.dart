@@ -9,7 +9,7 @@ class OrderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Yours Orders"),
+        title: Text("Your Orders"),
       ),
       drawer: AppDrawer(),
       body: ListView.builder(
