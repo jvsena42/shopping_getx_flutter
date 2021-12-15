@@ -39,12 +39,12 @@ class CartItem extends StatelessWidget {
             leading: Chip(
               label: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text('₦$price'),
+                child: Text('USD $price'),
               ),
               backgroundColor: Theme.of(context).primaryColor,
             ),
             title: Text(title),
-            subtitle: Text('Total: ₦${(price * quantity)}'),
+            subtitle: Text('Total: USD ${(price * quantity)}'),
             trailing: Text('$quantity X'),
           ),
         ),

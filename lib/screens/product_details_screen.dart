@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_getx_flutter/constants/text_styles.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
 
@@ -13,7 +14,7 @@ class ProductDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(this.title),
+        title: Text(title),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -26,7 +27,7 @@ class ProductDetailsScreen extends StatelessWidget {
                       bottomLeft: Radius.circular(25),
                       bottomRight: Radius.circular(25)),
                   child: Image.network(
-                    this.image,
+                    image,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -37,25 +38,17 @@ class ProductDetailsScreen extends StatelessWidget {
                   children: [
                     Chip(
                       label: Text(
-                        "Price: " + "₦" + this.price.toString(),
+                        "Price: " "USD " + price.toString(),
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold
-                        ),
+                        style: textButtonWhite,
                       ),
                       backgroundColor: Theme.of(context).primaryColor,
                     ),
                     SizedBox(height: 15),
                     Text(
-                      "" + this.description,
+                      "" + description,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Color(0xff403B58),
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: textDescription,
                     ),
                   ],
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shopping_getx_flutter/constants/colors.dart';
 import 'package:shopping_getx_flutter/controller/cart_controller.dart';
 import 'package:shopping_getx_flutter/controller/order_controller.dart';
 import 'package:shopping_getx_flutter/widget/cart_items.dart';
@@ -34,7 +35,7 @@ class CartScreen extends StatelessWidget {
                     Spacer(),
                     Chip(
                       label: Text(
-                        '₦${cartController.totalAmount.toStringAsFixed(2)}',
+                        'USD ${cartController.totalAmount.toStringAsFixed(2)}',
                         style: TextStyle(
                           color: Colors.white,
                         ),
@@ -52,7 +53,7 @@ class CartScreen extends StatelessWidget {
                                 cartController.clear();
                                 Get.snackbar(
                                     "Orders", "Orders placed successfully",
-                                    backgroundColor: Colors.green,
+                                    backgroundColor: colorSnackbar,
                                     snackPosition: SnackPosition.BOTTOM);
                               },
                               child: Text('ORDER NOW'));

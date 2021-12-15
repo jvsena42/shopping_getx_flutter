@@ -9,15 +9,13 @@ import 'cart_screen.dart';
 class ProductOverviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final cartController = Get.put(CartController());
-
     return Scaffold(
       appBar: AppBar(
         title: Text("My Shop"),
         actions: <Widget>[
           GetBuilder<CartController>(
               init: CartController(),
-              builder: (contex) {
+              builder: (context) {
                 return GestureDetector(
                   child: IconButton(
                     icon: Icon(
