@@ -12,6 +12,7 @@ class ProductOverviewPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("My Shop"),
+        centerTitle: true,
         actions: <Widget>[
           GetBuilder<CartController>(
               init: CartController(),

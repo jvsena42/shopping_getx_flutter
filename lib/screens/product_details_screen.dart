@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_getx_flutter/constants/tags.dart';
 import 'package:shopping_getx_flutter/constants/text_styles.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
@@ -22,13 +23,16 @@ class ProductDetailsScreen extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(25),
-                      bottomRight: Radius.circular(25)),
-                  child: Image.network(
-                    image,
-                    fit: BoxFit.cover,
+                child: Hero(
+                  tag: tagProduct,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(25),
+                        bottomRight: Radius.circular(25)),
+                    child: Image.network(
+                      image,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
