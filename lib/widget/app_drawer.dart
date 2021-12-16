@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shopping_getx_flutter/screens/favories_screen.dart';
 import 'package:shopping_getx_flutter/screens/order_screen.dart';
 import 'package:shopping_getx_flutter/screens/product_overview_screen.dart';
 
@@ -12,7 +13,7 @@ class AppDrawer extends StatelessWidget {
       child: Column(
         children: <Widget>[
           AppBar(
-            title: Text("Hello Friend"),
+            title: Text("Hello!"),
             automaticallyImplyLeading: false,
           ),
           Divider(),
@@ -21,6 +22,14 @@ class AppDrawer extends StatelessWidget {
             title: Text("Shop"),
             onTap: () {
               Get.to(() => ProductOverviewPage());
+            },
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.favorite),
+            title: Text("Favorites"),
+            onTap: () {
+              Get.to(() => FavoritesScreen());
             },
           ),
           Divider(),

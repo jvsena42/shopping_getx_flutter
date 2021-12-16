@@ -9,18 +9,22 @@ import 'package:shopping_getx_flutter/screens/product_details_screen.dart';
 class ProductsGrid extends StatelessWidget {
   final controller = Get.put(ProductController());
   final cartController = Get.put(CartController());
+  final bool isFavorite;
+
+  ProductsGrid({this.isFavorite = false});
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
       padding: const EdgeInsets.all(10),
-      itemCount: controller.items.length,
+      itemCount: isFavorite ? controller.favouriteItems.length : controller.items.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 3 / 2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10),
       itemBuilder: (context, index) {
+        var item = isFavorite ? controller.favouriteItems[index] : controller.items[index];
         return GetBuilder(
           init: ProductController(),
           builder: (value) => ClipRRect(
@@ -30,17 +34,17 @@ class ProductsGrid extends StatelessWidget {
                 onTap: () {
                   Get.to(
                     ProductDetailsScreen(
-                      controller.items[index].productTitle,
-                      controller.items[index].price,
-                      controller.items[index].imageUrl,
-                      controller.items[index].description,
+                      item.productTitle,
+                      item.price,
+                      item.imageUrl,
+                      item.description,
                     ),
                   );
                 },
                 child: Hero(
                   tag: tagProduct,
                   child: Image.network(
-                    controller.items[index].imageUrl,
+                    item.imageUrl ,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -49,7 +53,7 @@ class ProductsGrid extends StatelessWidget {
                 backgroundColor: Colors.black87,
                 leading: IconButton(
                   icon: Icon(
-                    controller.items[index].isFavourite == true
+                    item.isFavourite == true
                         ? Icons.favorite
                         : Icons.favorite_border,
                     color: Theme.of(context).accentColor,
@@ -59,7 +63,7 @@ class ProductsGrid extends StatelessWidget {
                   },
                 ),
                 title: Text(
-                  controller.items[index].productTitle,
+                  item.productTitle,
                   textAlign: TextAlign.center,
                 ),
                 trailing: GetBuilder<CartController>(
