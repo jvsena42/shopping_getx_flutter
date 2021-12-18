@@ -15,6 +15,8 @@ An app to training dependency injection and state manegement with the Getx libra
 
 ![Overview](https://github.com/jvsena42/shopping_getx_flutter/blob/master/screenshots/overview.png?raw=true)
 
+![Product_detail](https://github.com/jvsena42/shopping_getx_flutter/blob/master/screenshots/product_detail.png?raw=true)
+
 ![Menu](https://github.com/jvsena42/shopping_getx_flutter/blob/master/screenshots/menu.png?raw=true)
 
 ![Favorites](https://github.com/jvsena42/shopping_getx_flutter/blob/master/screenshots/favorites.png?raw=true)
